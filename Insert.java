@@ -1,32 +1,33 @@
 // to insert element at particular position in array
+// import java.util.Arrays;
 
+// public class Insert {
 
+//     public static void main(String[] args) {
+//         int[] arr = {0, 1, 2, 3, 4};
+//         int[] elements = {5, 6};
+//         int[] positions = {2, 4};
 
-public class Insert 
-{
-    public static void main(String[] args) // 5 6     2 4 
-    {
-        int [] arr={0,1,2,3,4};
-        int []position ={2,4} ;
-        int []element ={5,6};
-        int index ;
-        
-        for(int i=0; i<position.length; i++)
-        {
-            index = position[i]-1;           
-            for( i=arr.length-1; i >index ; i--)
-                {
-                    arr[i] = arr[i-1];
-                }
-                arr[index] = element[i];
-        }
-        
-        
-        for(int i=0; i<arr.length; i++)
-        {
-            System.out.println(arr[i]);
-        }
-        
-    }
-}
+//         // Adjust positions to 0-based
+//         for (int i = 0; i < positions.length; i++) {
+//             positions[i]--;  // Convert 1-based index to 0-based
+//         }
+
+//         // Insert elements into arr at specified positions
+//         for (int i = 0; i < elements.length; i++) {
+//             int element = elements[i];
+//             int position = positions[i];
+
+//             // Shift elements to the right to make space
+//             System.arraycopy(arr, position, arr, position + 1, arr.length - position - 1);
+
+//             // Insert element at the specified position
+//             arr[position] = element;
+//         }
+
+//         // Print the resulting array
+//         System.out.println("Modified Array: " + Arrays.toString(arr));
+//     }
+// }
+
 

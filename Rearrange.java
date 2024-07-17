@@ -1,22 +1,40 @@
 // rearranging array elements by sign
-public class Rearrange 
-{
-    public static void main(String[] args) 
-    {
-        int arr[]= {3,1,-4,2,-2,-3};
-        int temp;
-        int i;
-        for( i=1; i<arr.length; i++)
-        {
-            if(arr[i] < 0 && arr[i-1]<0){
-                temp =arr[i];
-                arr[i] = arr[i-1];
-                arr[i - 1] = temp;
+import java.util.Arrays;
+
+public class Rearrange {
+
+    public static void rearrange(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left <= right) {
+            // Move left pointer to find a negative number
+            while (left <= right && arr[left] < 0) {
+                left++;
             }
-            
+            // Move right pointer to find a positive number
+            while (left <= right && arr[right] >= 0) {
+                right--;
+            }
+
+            // Swap elements if necessary
+            if (left <= right) {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
         }
-        for( i=0; i<arr.length; i++){
-            System.out.println(arr[i]);
-        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {2, -3, 4, -1, 6, -9, 0, 8, -7};
+        
+        System.out.println("Original Array: " + Arrays.toString(arr));
+        
+        rearrange(arr);
+        
+        System.out.println("Rearranged Array: " + Arrays.toString(arr));
     }
 }
